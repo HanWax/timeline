@@ -1,4 +1,3 @@
-require 'rails_helper'
 require './lib/data_handling/formatted_data'
 require './lib/data_handling/timeline'
 
@@ -188,6 +187,3 @@ describe Timeline do
 	end
 
 end
-
-
-
