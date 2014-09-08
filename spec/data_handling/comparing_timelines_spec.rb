@@ -43,8 +43,20 @@ describe 'when comparing two timelines' do
 
  		context 'in order to determine a miss' do
  			it 'uses inner and outer limits' do
- 				expect()
- 			end 
+ 				expect(outer_limit).to be_an_instance_of Float
+ 				expect(inner_limit).to be_an_instance_of Float
+ 			end
+
+ 			it 'a person must pass within the outer limit and outside the inner limit' do
+ 				distance_between = outer_limit - inner_limit #ensures changes to the parameters will not break this test
+ 				expect(did_they_miss?(distance_between)).to eq true
+ 			end
+
+ 			it 'must not register a miss if a person passes within the inner limit' do
+ 				distance_between = inner_limit - (inner_limit/2)
+ 				expect(did_they_miss?(distance_between)).to eq false
+ 			end
+
  		end
 
 end

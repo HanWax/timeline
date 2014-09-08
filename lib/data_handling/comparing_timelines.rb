@@ -23,3 +23,7 @@
 	def inner_limit
 		0.02
 	end
+
+	def did_they_miss?(distance_between)
+		distance_between < outer_limit && distance_between > inner_limit
+	end
